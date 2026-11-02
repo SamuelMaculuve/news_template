@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NewsHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#E2474B'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+<script src="mz.js"></script>
+<style>@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}.tick{animation:tick 35s linear infinite}</style>
+</head>
+<body class="bg-white font-sans text-neutral-900 antialiased">
+<header class="bg-neutral-900 text-white"><div class="mx-auto flex max-w-6xl items-center gap-8 px-4 py-4">
+  <a href="#" class="text-xl font-bold">NewsHub</a>
+  <nav data-nav class="hidden gap-6 text-xs lg:flex"><a>Nacional</a><a>Províncias</a><a>Política</a><a>Economia</a><a>Opinião</a><a>Saúde</a><a>Cultura</a><a>Viagem</a><a>Desporto</a></nav>
+  <span class="ml-auto flex items-center gap-2"><span class="px-2">⌕</span><button data-menu-btn class="lg:hidden grid h-9 w-9 place-items-center rounded-md"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></span>
+</div></header>
+
+<main class="mx-auto max-w-6xl px-4">
+  <div class="mt-4 flex overflow-hidden rounded bg-neutral-100 px-4 py-2 text-xs"><span class="mr-3 shrink-0 font-medium text-brand">Última hora:</span><div class="overflow-hidden"><p class="tick flex w-max gap-8 whitespace-nowrap"><span>Comboios extra entre Maputo e Matola no fim de semana</span><span class="text-brand">●</span><span>Alerta de calor intenso para Gaza e Inhambane</span><span class="text-brand">●</span><span>Época do caju arranca oficialmente em Nampula</span><span class="text-brand">●</span><span>Comboios extra entre Maputo e Matola no fim de semana</span><span class="text-brand">●</span><span>Alerta de calor intenso para Gaza e Inhambane</span><span class="text-brand">●</span><span>Época do caju arranca oficialmente em Nampula</span></p></div></div>
+
+  <section class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+    <div class="relative lg:pl-16">
+      <img data-mz="maputo" data-w="1100" class="h-[340px] w-full rounded-lg object-cover lg:h-[420px]">
+      <article class="relative mx-4 -mt-24 rounded-lg bg-neutral-100 p-6 shadow lg:absolute lg:left-0 lg:top-6 lg:m-0 lg:w-80">
+        <p class="flex items-center gap-2 text-sm"><span class="grid h-6 w-6 place-items-center rounded-full bg-black text-[9px] text-white">VL</span><b>Voz do Limpopo</b><span class="text-xs text-neutral-400">• 10 min atrás</span></p>
+        <h1 class="mt-3 text-2xl font-semibold leading-tight sm:text-3xl">Grande Maputo: como a cidade vai crescer na próxima década</h1>
+        <p class="mt-3 text-xs text-neutral-500">Novos bairros, transportes e serviços: urbanistas explicam os desafios da área metropolitana que já ultrapassa três milhões de habitantes. <a href="#" class="font-bold text-neutral-800">Ler mais</a></p>
+        <p class="mt-4 flex justify-between text-xs text-neutral-400">2 Nov 2026 <span>‹ ›</span></p>
+      </article>
+    </div>
+    <ul id="side" class="space-y-4"></ul>
+  </section>
+
+  <section class="mt-14"><div class="flex justify-between"><h2 class="text-2xl font-bold">Últimas Notícias</h2><a class="text-sm text-brand">Ver tudo ›</a></div><div id="latest" class="mt-6 grid gap-6 md:grid-cols-3"></div></section>
+
+  <section class="mt-14"><div class="flex justify-between"><h2 class="text-2xl font-bold">Leitura Obrigatória</h2><a class="text-sm text-brand">Ver tudo ›</a></div>
+    <div class="mt-6 grid gap-6 lg:grid-cols-[1.6fr_1fr]">
+      <article><img data-mz="ilhamuseu" data-w="1000" class="aspect-[2/1] w-full rounded-lg object-cover"><p class="mt-4 flex items-center gap-2 text-sm"><img data-av="Jaime Langa" class="h-6 w-6 rounded-full">Jaime Langa <span class="text-xs text-neutral-400">• 10 horas atrás</span></p><h3 class="mt-2 text-lg font-semibold">Ilha de Moçambique: restauro do antigo palácio devolve vida ao museu</h3><p class="mt-2 text-xs text-neutral-500">Artesãos locais recuperaram tetos, portas e mobiliário com técnicas tradicionais. O museu prepara-se para reabrir com novas salas dedicadas à história do Índico. <a href="#" class="font-medium text-brand">Ler mais</a></p><p class="mt-3 text-xs"><span class="text-brand">Cultura</span> <span class="text-neutral-400">• 6 min</span></p></article>
+      <ul id="must" class="space-y-4"></ul>
+    </div></section>
+
+  <section class="mt-14"><div class="flex justify-between"><h2 class="text-2xl font-bold">Destaques da Semana</h2><a class="text-sm text-brand">Ver tudo ›</a></div><div id="weekly" class="mt-6 grid grid-cols-2 gap-5 lg:grid-cols-4"></div></section>
+
+  <section class="mb-14 mt-14"><div class="flex justify-between"><h2 class="text-2xl font-bold">Top Criadores</h2><a class="text-sm text-brand">Ver tudo ›</a></div><div id="creators" class="mt-6 grid grid-cols-2 gap-6 lg:grid-cols-4"></div></section>
+</main>
+
+<footer class="bg-neutral-100"><div class="mx-auto max-w-6xl px-4 py-12">
+  <div class="grid gap-10 lg:grid-cols-[1.5fr_2fr]">
+    <div><p class="text-xl font-bold">NewsHub</p><p class="mt-2 max-w-xs text-xs text-neutral-500">Notícias de Moçambique que informam, inspiram e aproximam.</p><form class="mt-5 flex gap-2" onsubmit="event.preventDefault()"><input class="w-48 rounded bg-white px-3 py-2 text-xs" placeholder="✉ O teu email"><button class="rounded bg-brand px-3 text-xs text-white">Subscrever</button></form></div>
+    <div class="grid grid-cols-2 gap-6 text-sm sm:grid-cols-4">
+      <div><b>Secções</b><ul class="mt-3 space-y-2 text-xs text-neutral-500"><li>Nacional</li><li>Províncias</li><li>Economia</li><li>Desporto</li></ul></div>
+      <div><b>Empresa</b><ul class="mt-3 space-y-2 text-xs text-neutral-500"><li>Sobre</li><li>Carreiras</li><li>Media</li><li>Contacto</li></ul></div>
+      <div><b>Recursos</b><ul class="mt-3 space-y-2 text-xs text-neutral-500"><li>Blog</li><li>Newsletter</li><li>Eventos</li><li>Ajuda</li></ul></div>
+      <div><b>Social</b><ul class="mt-3 space-y-2 text-xs text-neutral-500"><li>Facebook</li><li>Instagram</li><li>LinkedIn</li><li>WhatsApp</li></ul></div>
+    </div>
+  </div>
+  <div class="mt-10 flex flex-wrap justify-between gap-4 border-t pt-5 text-xs text-neutral-500"><span>© 2026 NewsHub · Notícias fictícias para demonstração.</span><span class="flex gap-5"><a>Termos</a><a>Privacidade</a><a>Cookies</a><a>Parceiros</a></span></div>
+</div></footer>
+
+<script>
+const S=['Voz do Limpopo','Gazeta do Zambeze','Eco do Niassa','Golo Moz'];
+side.innerHTML=[['Estação dos CFM recebe concerto de marrabenta','Cultura','cfm'],['Katembe: novo terminal de chapas abre esta semana','Cidade','katembe'],['Tomate de Gaza chega mais barato aos mercados da capital','Economia','tomate2'],['Polana: prédios históricos vão ser recuperados','Cidade','vila']].map((s,i)=>`<li><article class="flex gap-4"><img data-mz="${s[2]}" data-w="300" class="h-20 w-24 shrink-0 rounded object-cover"><div><p class="text-xs"><b>${S[i]}</b> <span class="text-neutral-400">• ${i+1} horas</span></p><p class="mt-1 text-sm font-semibold leading-snug">${s[0]}</p><p class="mt-1 text-xs"><span class="text-brand">${s[1]}</span> <span class="text-neutral-400">• ${i+2} min</span></p></div></article></li>`).join('');
+latest.innerHTML=[['Hóquei em patins: Moçambique vence particular e ganha confiança para o Mundial','Desporto','hoquei'],['Ponte Maputo–Katembe regista recorde de travessias no feriado','Sociedade','ponte'],['Beira: comerciantes do centro pedem mais estacionamento e iluminação','Províncias','beira']].map((l,i)=>`<article><img data-mz="${l[2]}" data-w="600" class="aspect-[3/2] w-full rounded-lg object-cover"><p class="mt-4 text-sm"><b>${S[i]}</b> <span class="text-xs text-neutral-400">• 10 horas atrás</span></p><h3 class="mt-2 text-lg font-semibold leading-snug">${l[0]}</h3><p class="mt-2 text-xs text-neutral-500">Um resumo curto que dá contexto ao leitor e o convida a continuar a ler… <a href="#" class="font-medium text-brand">Ler mais</a></p><p class="mt-3 text-xs"><span class="text-brand">${l[1]}</span> <span class="text-neutral-400">• 3 min</span></p></article>`).join('');
+must.innerHTML=[['Óscar Manhiça','Dhows do Norte: a arte de construir barcos à mão','Cultura','dhow'],['Rita Bila','Agricultoras de Manica criam banco de sementes','Agricultura','camponesas'],['Edson Cossa','Futebol de praia: a escola de talentos da Marginal','Desporto','praiafut2']].map(m=>`<li><article class="flex gap-4"><img data-mz="${m[3]}" data-w="300" class="h-24 w-36 shrink-0 rounded object-cover"><div><p class="flex items-center gap-2 text-xs"><img data-av="${m[0]}" class="h-4 w-4 rounded-full"><b>${m[0]}</b> <span class="text-neutral-400">• 2 horas</span></p><p class="mt-1 text-sm font-semibold">${m[1]}</p><p class="mt-1 text-xs"><span class="text-brand">${m[2]}</span> <span class="text-neutral-400">• 5 min</span></p></div></article></li>`).join('');
+weekly.innerHTML=[['Amanhecer na baía: as melhores fotos da semana','Fotografia','amanhecer'],['Mandioca melhorada chega a mais distritos da Zambézia','Agricultura','mandioca'],['Bebida de caju: tradição que pode virar indústria','Economia','caju'],['Avenida 24 de Julho: o antes e depois das obras','Cidade','av24']].map((w,i)=>`<article><img data-mz="${w[2]}" data-w="500" class="aspect-[10/9] w-full rounded-lg object-cover"><p class="mt-3 text-xs"><b>${S[i]}</b> <span class="text-neutral-400">• 10 horas</span></p><p class="mt-1 text-sm font-semibold">${w[0]}</p><p class="mt-1 text-xs"><span class="text-brand">${w[1]}</span> <span class="text-neutral-400">• 2 min</span></p></article>`).join('');
+creators.innerHTML=[['Joana Mabote','Voz do Limpopo'],['Efraim Nhaca','Gazeta do Zambeze'],['Nina Vaz','Eco do Niassa'],['Jamal Tembe','Golo Moz']].map(c=>`<div class="flex items-center gap-3"><img data-av="${c[0]}" class="h-11 w-11 rounded-full"><div><p class="font-semibold">${c[0]}</p><p class="text-xs text-brand">${c[1]}</p></div></div>`).join('');
+</script>
+</body>
+</html>

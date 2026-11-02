@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Blogjar</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital@1&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{navy:'#0E1530'},fontFamily:{sans:['Inter','sans-serif']}}}}</script>
+<script src="mz.js"></script>
+</head>
+<body class="bg-[#F4F6FA] font-sans text-navy antialiased">
+
+<div class="bg-[radial-gradient(60%_80%_at_20%_10%,#d9c8ff_0%,transparent_60%),radial-gradient(50%_80%_at_80%_0%,#ffc9ef_0%,transparent_60%)]">
+<header class="mx-auto flex max-w-6xl items-center justify-between px-4 py-4">
+  <a href="#" class="text-xl font-bold">Blogjar</a>
+  <nav data-nav class="hidden gap-10 text-sm font-medium md:flex"><a>Início ▾</a><a>Sobre</a><a>Artigos</a><a>Posts ▾</a></nav>
+  <div class="flex items-center gap-4 text-sm"><span class="hidden sm:inline">🌐 PT ▾</span><a class="rounded bg-navy px-3 py-1.5 text-white">Contacta-me</a><button data-menu-btn class="md:hidden grid h-9 w-9 place-items-center rounded-md"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></div>
+</header>
+<section class="mx-auto max-w-6xl px-4 pb-16 pt-12 text-center">
+  <span class="inline-flex items-center gap-2 rounded-full bg-white px-2 py-1 text-xs"><img data-av="Tomás Cuamba" class="h-5 w-5 rounded-full">Tomás Cuamba</span>
+  <h1 class="mx-auto mt-4 max-w-xl text-3xl font-bold leading-tight sm:text-4xl">Moçambique Através da Minha Lente</h1>
+  <div class="mt-10 grid grid-cols-2 gap-4 lg:grid-cols-4">
+    <img data-mz="ilha" data-w="500" class="aspect-[1/1] w-full rounded-xl object-cover">
+    <article class="relative"><img data-mz="dhow" data-w="500" class="aspect-[1/1] w-full rounded-xl object-cover"><div class="absolute inset-0 rounded-xl bg-gradient-to-t from-black/60 to-transparent"></div><div class="absolute bottom-3 left-3 text-left text-white"><span class="rounded bg-white px-1.5 py-0.5 text-[10px] text-navy">Viagem</span><p class="mt-1 text-sm font-semibold">De dhow pelas ilhas<br>do Norte</p></div></article>
+    <img data-mz="porsol" data-w="500" class="aspect-[1/1] w-full rounded-xl object-cover">
+    <img data-mz="marginal" data-w="500" class="aspect-[1/1] w-full rounded-xl object-cover">
+  </div>
+</section>
+</div>
+
+<main class="mx-auto max-w-6xl px-4">
+  <div class="flex items-center gap-4"><span class="h-px flex-1 bg-slate-200"></span><h2 class="text-lg font-semibold">Blogs em Destaque</h2><span class="h-px flex-1 bg-slate-200"></span></div>
+  <div class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+    <div class="space-y-6">
+      <article class="grid gap-5 rounded-xl bg-white p-3 sm:grid-cols-[1fr_1.3fr] sm:items-center">
+        <img data-mz="iss" data-w="600" class="aspect-[5/4] w-full rounded-lg object-cover">
+        <div class="p-2"><p class="text-xs">• Viagem &nbsp;<span class="text-slate-400">—— 03 Out 2026</span></p><h3 class="mt-3 text-xl font-semibold leading-snug">Do espaço à rua: redescobrir a baía de Maputo a pé num só dia.</h3><p class="mt-3 flex items-center gap-2 text-xs"><img data-av="Tomás Cuamba" class="h-6 w-6 rounded-full">Tomás Cuamba</p><p class="mt-3 text-xs text-slate-500">Um roteiro da Baixa à Polana, com paragens no Mercado Central, na Estação dos CFM e na Marginal.</p><a href="#" class="mt-4 inline-block text-sm font-semibold">Continuar a ler ⋯→</a></div>
+      </article>
+      <div id="grid" class="columns-1 gap-6 sm:columns-2 [&>*]:mb-6"></div>
+    </div>
+    <aside class="space-y-6">
+      <div class="rounded-xl bg-white p-6 text-center"><img data-av="Tomás Cuamba" class="mx-auto h-14 w-14 rounded-full"><p class="mt-3 font-semibold">Tomás Cuamba</p><p class="text-xs text-slate-400">Fotógrafo & UX Designer</p><p class="mt-3 text-xs text-slate-500">Sou fotógrafo e designer, vivo em Maputo e viajo pelas dez províncias à procura de histórias para contar.</p><button class="mt-4 rounded bg-navy px-3 py-1.5 text-xs text-white">Paga-me um café</button><div class="mt-4 flex justify-center gap-3 text-xs text-slate-500">𝕏 ◎ Bē ◉ ▣</div></div>
+      <div class="rounded-xl bg-white p-5"><p class="font-semibold">Posts Recentes</p><ul id="recent" class="mt-4 space-y-4"></ul></div>
+      <div class="rounded-xl bg-white p-5"><article><img data-mz="praiafut2" data-w="500" class="aspect-[5/3] w-full rounded-lg object-cover"><span class="mt-3 inline-block rounded bg-slate-100 px-1.5 py-0.5 text-[10px]">Desporto</span><p class="mt-1 text-sm font-semibold">Futebol na areia: o desporto que une as praias do país</p></article><ul id="recent2" class="mt-4 space-y-4 border-t pt-4"></ul></div>
+      <div class="rounded-xl bg-white p-6 text-center"><img data-mz="caju2" data-w="500" class="mx-auto aspect-[3/2] w-full rounded-lg object-cover"><p class="mt-4 font-['Playfair_Display'] italic text-red-500">Até 30% de desconto</p><p class="text-lg font-semibold">Caju de Nampula, direto do produtor</p><button class="mt-3 rounded bg-navy px-3 py-1.5 text-xs text-white">Comprar agora</button></div>
+      <div class="rounded-xl bg-white p-5"><p class="font-semibold">Tags</p><div id="tags" class="mt-4 flex flex-wrap gap-2"></div></div>
+    </aside>
+  </div>
+  <div class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]"><div class="grid gap-6 sm:grid-cols-2">
+    <div class="rounded-xl bg-gradient-to-br from-violet-100 via-white to-teal-50 p-6 text-center"><span class="mx-auto grid h-12 w-12 place-items-center rounded-full bg-white text-xl shadow">✉</span><p class="mt-4 font-semibold">Subscreve a Newsletter</p><p class="text-xs text-slate-400">Um roteiro moçambicano por semana</p><input class="mt-4 w-full rounded border px-3 py-2 text-xs" placeholder="Endereço de email"><label class="mt-3 flex items-center justify-center gap-2 text-xs text-slate-500"><input type="checkbox">Aceito receber emails</label><button class="mt-3 rounded bg-navy px-4 py-2 text-xs text-white">Subscrever</button></div>
+    <div class="rounded-xl bg-white p-5"><p class="font-semibold">Top Posts</p><ol id="topPosts" class="mt-4 space-y-4"></ol></div>
+  </div></div>
+</main>
+
+<footer class="mt-16 bg-white">
+  <div class="mx-auto grid max-w-6xl gap-10 px-4 py-12 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1.2fr]">
+    <div><p class="font-semibold">Instagram</p><div class="mt-4 grid grid-cols-4 gap-2" id="insta"></div></div>
+    <div><p class="font-semibold">Links úteis</p><ul class="mt-4 space-y-3 text-sm text-slate-500"><li>Início</li><li>Sobre mim</li><li>Artigos</li><li>Posts</li><li>Contacto</li></ul></div>
+    <div><p class="font-semibold">Categorias</p><ul class="mt-4 space-y-3 text-sm text-slate-500"><li>Praias</li><li>Cultura</li><li>Gastronomia</li><li>Desporto</li><li>Natureza</li></ul></div>
+    <div><p class="font-semibold">Contacto</p><ul class="mt-4 space-y-4 text-sm text-slate-500"><li>📍 Av. Exemplo 123, Maputo</li><li>📞 +258 00 000 0000</li><li>✉ info@exemplo.com</li></ul></div>
+  </div>
+  <div class="mx-auto flex max-w-6xl flex-wrap items-center justify-between gap-4 border-t px-4 py-5 text-xs text-slate-500"><span>Copyright © 2026 Blogjar · conteúdo de demonstração</span><span class="flex gap-2"><i class="h-6 w-6 rounded-full bg-navy"></i><i class="h-6 w-6 rounded-full bg-slate-100"></i><i class="h-6 w-6 rounded-full bg-slate-100"></i></span><span class="flex items-center gap-6">Termos · Privacidade · Cookies <a href="#" class="grid h-8 w-8 place-items-center rounded bg-navy text-white">↑</a></span></div>
+</footer>
+
+<script>
+const post=(k,t,d)=>`<article class="break-inside-avoid overflow-hidden rounded-xl bg-white"><img data-mz="${k}" data-w="600" class="aspect-[7/5] w-full object-cover"><div class="p-4"><p class="flex items-center gap-2 text-xs"><img data-av="Tomás Cuamba" class="h-5 w-5 rounded-full">Tomás Cuamba</p><h3 class="mt-2 font-semibold leading-snug">${t}</h3><p class="mt-2 text-xs text-slate-500">${d}</p><p class="mt-4 flex justify-between border-t pt-3 text-xs text-slate-500"><a href="#" class="font-medium text-navy">Ler mais →</a><span>🔖 Guardar</span></p></div></article>`;
+const over=(k,t)=>`<article class="relative break-inside-avoid overflow-hidden rounded-xl"><img data-mz="${k}" data-w="600" class="aspect-[5/6] w-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent"></div><div class="absolute bottom-4 left-4 right-4 text-center text-white"><p class="text-[11px]">Fotografia &nbsp; 03 Out 2026</p><p class="mt-1 font-semibold">${t}</p></div></article>`;
+grid.innerHTML=[post('ilhamuseu','Ilha de Moçambique: uma noite na antiga capital','Pedra e cal, macuti e histórias de cinco séculos numa ilha de 3 km.'),over('amanhecer','Amanhecer em Maputo: a cidade antes do trânsito'),post('cabras','A caminho do mercado: um sábado no interior de Gaza','Cabras, capulanas e conversa — o mercado como centro da vida rural.'),post('ponte2','Atravessar a baía: guia para ir à Ponta do Ouro','Pela ponte da Katembe, a praia fica a menos de duas horas da capital.'),post('mandioca','Mandioca: da machamba ao prato de matapa','Como a raiz mais plantada do país chega à mesa das famílias.'),over('vila','Vila Algarve e a memória da cidade')].join('');
+const mini=(k,t)=>`<li><article class="flex items-center gap-3"><img data-mz="${k}" data-w="120" class="h-10 w-10 rounded-full object-cover"><div><p class="text-xs font-semibold">${t}</p><p class="text-[11px] text-slate-400">03 Out 2026</p></div></article></li>`;
+recent.innerHTML=[['seaside','Onde comer marisco à beira-mar em Maputo'],['catembe','Katembe vista do ferry: memórias de uma travessia'],['baixa','Os prédios art déco da Baixa'],['beira','Beira: um fim de semana na cidade do Chiveve']].map(r=>mini(...r)).join('');
+recent2.innerHTML=[['praiafut','7 praias para ver futebol ao pôr do sol'],['hoquei','Hóquei em patins: a paixão moçambicana'],['skyline','A nova linha do horizonte de Maputo']].map(r=>mini(...r)).join('');
+tags.innerHTML=['Praias','Roteiros','Gastronomia','Ilhas','Fotografia','Cultura','Marrabenta','Desporto','Natureza'].map(t=>`<span class="rounded border px-2.5 py-1.5 text-xs ${t=='Fotografia'?'bg-navy text-white':'text-slate-500'}">${t}</span>`).join('');
+topPosts.innerHTML=['Tudo o que aprendi a fotografar a Ilha de Moçambique','10 pratos moçambicanos que tens de provar','Guia de bolso para a época do caju'].map((t,n)=>`<li class="border-b pb-3"><article class="flex gap-3"><span class="text-2xl font-semibold">${n+1}</span><div><p class="text-xs font-semibold">${t}</p><p class="mt-1 text-[11px] text-slate-400">03 Out 2026 · 4 min</p></div></article></li>`).join('');
+insta.innerHTML=['ilha','dhow','marginal','porsol','ponte','cabras','caju'].map(k=>`<img data-mz="${k}" data-w="200" class="aspect-square w-full rounded object-cover">`).join('')+'<a class="self-end text-[11px] underline">Ver tudo</a>';
+</script>
+</body>
+</html>

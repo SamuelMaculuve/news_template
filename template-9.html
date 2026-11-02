@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Maré</title>
+<meta name="theme-color" content="#1E2A5A">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Literata:opsz,wght@7..72,400;7..72,500&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{ink:'#1E2A5A',sea:'#0E7C7B',saffron:'#F2A900',chili:'#B4232C',mist:'#EEF1F4'},fontFamily:{display:['"Bricolage Grotesque"','sans-serif'],body:['Literata','serif']}}}}</script>
+<script src="mz.js"></script>
+<style>
+/* Faixa capulana: losangos, círculos e riscas em camadas */
+.capulana{height:22px;background:
+  radial-gradient(circle at 11px 11px,#F2A900 4px,transparent 4.5px) 0 0/22px 22px,
+  linear-gradient(135deg,#1E2A5A 25%,transparent 25%) 0 0/22px 22px,
+  linear-gradient(225deg,#1E2A5A 25%,transparent 25%) 0 0/22px 22px,
+  linear-gradient(315deg,#0E7C7B 25%,transparent 25%) 0 0/22px 22px,
+  linear-gradient(45deg,#0E7C7B 25%,transparent 25%) 0 0/22px 22px,#B4232C}
+.capulana-thin{height:6px;background:repeating-linear-gradient(90deg,#B4232C 0 18px,#F2A900 18px 26px,#1E2A5A 26px 44px,#0E7C7B 44px 52px)}
+.rail::-webkit-scrollbar,.snap::-webkit-scrollbar{display:none}
+.rail,.snap{scrollbar-width:none}
+:focus-visible{outline:3px solid #F2A900;outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+</head>
+<body class="bg-white font-body text-ink antialiased">
+
+<header class="sticky top-0 z-40 bg-ink text-white">
+  <div class="mx-auto flex max-w-6xl items-center gap-3 px-4 py-3">
+    <a href="#" class="font-display text-[28px] font-extrabold leading-none tracking-tight">maré<span class="text-saffron">.</span></a>
+    <p class="hidden font-display text-sm text-white/70 sm:block">Notícias de Moçambique</p>
+    <nav data-nav class="ml-auto hidden gap-6 font-display text-sm lg:flex"><a href="#" class="text-saffron">Hoje</a><a href="#">Províncias</a><a href="#">Economia</a><a href="#">Cultura</a><a href="#">Desporto</a><a href="#">Opinião</a></nav>
+    <button class="ml-auto grid h-10 w-10 place-items-center rounded-full hover:bg-white/10 lg:ml-2" aria-label="Pesquisar" data-soon><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></button>
+    <button data-menu-btn class="grid h-10 w-10 place-items-center rounded-full hover:bg-white/10 lg:hidden"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h10"/></svg></button>
+  </div>
+  <div class="capulana"></div>
+</header>
+
+<!-- Províncias, de norte a sul -->
+<div class="border-b border-mist bg-white">
+  <div id="rail" class="rail mx-auto flex max-w-6xl gap-2 overflow-x-auto px-4 py-3 font-display text-sm" role="tablist" aria-label="Filtrar por província"></div>
+</div>
+
+<main class="mx-auto max-w-6xl px-4 pb-28 lg:pb-16">
+  <p class="mt-5 font-display text-sm text-ink/60">Segunda-feira, 2 de novembro de 2026 · Maputo 31°, céu limpo</p>
+
+  <!-- Destaque + Em 1 minuto -->
+  <section class="mt-3 grid gap-8 lg:grid-cols-[1.7fr_1fr]">
+    <article class="group">
+      <div class="relative overflow-hidden rounded-2xl">
+        <img data-mz="ponte" data-w="1200" class="aspect-[4/3] w-full object-cover sm:aspect-[16/9]">
+        <div class="capulana-thin absolute inset-x-0 bottom-0"></div>
+      </div>
+      <p class="mt-4 font-display text-sm font-medium text-sea">Maputo · Mobilidade</p>
+      <h1 class="mt-1 font-display text-[34px] font-extrabold leading-[1.05] tracking-tight sm:text-5xl">A ponte que aproximou duas margens</h1>
+      <p class="mt-3 max-w-[62ch] text-[17px] leading-relaxed text-ink/80">Comerciantes, estudantes e pescadores da Katembe contam como a travessia mudou o dia a dia, o preço dos terrenos e o caminho para a Ponta do Ouro.</p>
+      <div class="mt-4 flex items-center gap-3 font-display text-sm">
+        <img data-av="Celso Macuácua" class="h-8 w-8 rounded-full">
+        <span>Celso Macuácua</span><span class="text-ink/50">há 40 min · 6 min de leitura</span>
+      </div>
+      <a href="#" class="mt-5 inline-flex items-center gap-2 rounded-full bg-ink px-5 py-3 font-display text-sm font-medium text-white hover:bg-sea">Ler mais</a>
+    </article>
+
+    <aside class="rounded-2xl bg-mist p-5 lg:self-start">
+      <div class="flex items-center justify-between">
+        <h2 class="font-display text-xl font-bold">Em 1 minuto</h2>
+        <button data-soon class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 font-display text-xs font-medium"><span class="grid h-5 w-5 place-items-center rounded-full bg-chili text-[9px] text-white">▶</span>Ouvir resumo</button>
+      </div>
+      <ol class="mt-4 space-y-4">
+        <li class="flex gap-3"><time class="w-12 shrink-0 font-display text-sm font-bold text-chili">07:10</time><p class="text-[15px] leading-snug">Comboios extra entre Maputo e Matola no fim de semana do festival.</p></li>
+        <li class="flex gap-3"><time class="w-12 shrink-0 font-display text-sm font-bold text-chili">08:25</time><p class="text-[15px] leading-snug">Alerta de calor intenso para Gaza e Inhambane até quarta-feira.</p></li>
+        <li class="flex gap-3"><time class="w-12 shrink-0 font-display text-sm font-bold text-chili">09:40</time><p class="text-[15px] leading-snug">Época do caju arranca em Nampula com feiras em seis distritos.</p></li>
+        <li class="flex gap-3"><time class="w-12 shrink-0 font-display text-sm font-bold text-chili">10:15</time><p class="text-[15px] leading-snug">Seleção de hóquei em patins divulga convocados para o Mundial.</p></li>
+        <li class="flex gap-3"><time class="w-12 shrink-0 font-display text-sm font-bold text-chili">10:50</time><p class="text-[15px] leading-snug">Ilha de Moçambique abre inscrições para guias comunitários.</p></li>
+      </ol>
+    </aside>
+  </section>
+
+  <!-- Feed filtrável -->
+  <section class="mt-14">
+    <div class="flex items-baseline justify-between gap-4">
+      <h2 class="font-display text-3xl font-extrabold tracking-tight" id="feedTitle">Todo o país</h2>
+      <span id="feedCount" class="font-display text-sm text-ink/60"></span>
+    </div>
+    <div id="feed" class="mt-6 grid gap-x-8 gap-y-6 md:grid-cols-2 lg:grid-cols-3"></div>
+    <div id="feedEmpty" class="mt-6 hidden rounded-2xl border-2 border-dashed border-mist p-8 text-center">
+      <p class="font-display text-lg font-bold">Ainda sem notícias desta província hoje.</p>
+      <p class="mt-1 text-ink/70">Escolhe outra província ou vê todo o país.</p>
+      <button onclick="pick('Todas')" class="mt-4 rounded-full bg-ink px-5 py-2.5 font-display text-sm text-white">Ver todo o país</button>
+    </div>
+  </section>
+
+  <!-- Fotos da semana -->
+  <section class="mt-16">
+    <h2 class="font-display text-3xl font-extrabold tracking-tight">Fotos da semana</h2>
+    <p class="mt-1 text-ink/70">Desliza para ver o país pelas lentes dos nossos leitores.</p>
+    <div class="snap -mx-4 mt-5 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-2" id="photos"></div>
+  </section>
+
+  <!-- Opinião -->
+  <section class="mt-16 rounded-3xl bg-ink px-5 py-8 text-white sm:px-8">
+    <h2 class="font-display text-3xl font-extrabold tracking-tight">Opinião</h2>
+    <div id="opinion" class="mt-6 grid gap-6 md:grid-cols-3"></div>
+  </section>
+
+  <!-- WhatsApp -->
+  <section class="mt-16 overflow-hidden rounded-3xl bg-saffron">
+    <div class="capulana"></div>
+    <div class="flex flex-col gap-5 p-6 sm:p-8 md:flex-row md:items-center md:justify-between">
+      <div><h2 class="font-display text-2xl font-extrabold leading-tight sm:text-3xl">As notícias do dia no teu WhatsApp</h2><p class="mt-2 max-w-[48ch]">Um resumo às 7h, gratuito e leve para os teus dados. Sais quando quiseres.</p></div>
+      <button data-soon class="shrink-0 rounded-full bg-ink px-6 py-3.5 font-display font-medium text-white hover:bg-sea">Receber no WhatsApp</button>
+    </div>
+  </section>
+</main>
+
+<footer class="border-t border-mist">
+  <div class="mx-auto grid max-w-6xl gap-8 px-4 py-10 pb-28 sm:grid-cols-3 lg:pb-10">
+    <div><p class="font-display text-2xl font-extrabold">maré<span class="text-saffron">.</span></p><p class="mt-2 max-w-[36ch] text-sm text-ink/70">Notícias de Moçambique, do Rovuma ao Maputo. Projeto de demonstração: notícias e autores fictícios.</p></div>
+    <div class="font-display text-sm"><p class="font-bold">Secções</p><ul class="mt-3 grid grid-cols-2 gap-2 text-ink/70"><li>Hoje</li><li>Províncias</li><li>Economia</li><li>Cultura</li><li>Desporto</li><li>Opinião</li></ul></div>
+    <div class="font-display text-sm"><p class="font-bold">Maré</p><ul class="mt-3 space-y-2 text-ink/70"><li>Quem somos</li><li>Envia a tua foto</li><li>Contactos</li><li>Privacidade</li></ul></div>
+  </div>
+</footer>
+
+<!-- Barra inferior (telemóvel) -->
+<nav class="fixed inset-x-0 bottom-0 z-40 border-t border-mist bg-white/95 pb-[env(safe-area-inset-bottom)] backdrop-blur lg:hidden" aria-label="Navegação principal">
+  <div class="mx-auto grid max-w-md grid-cols-4 font-display text-[11px]">
+    <a href="#" class="flex flex-col items-center gap-1 py-2.5 text-ink"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7v9a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z"/></svg><b>Hoje</b></a>
+    <a href="#rail" class="flex flex-col items-center gap-1 py-2.5 text-ink/60"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>Províncias</a>
+    <button data-soon class="flex flex-col items-center gap-1 py-2.5 text-ink/60"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 14v-2a8 8 0 0116 0v2M4 14h3v6H5a1 1 0 01-1-1zM20 14h-3v6h2a1 1 0 001-1z"/></svg>Ouvir</button>
+    <button data-soon class="flex flex-col items-center gap-1 py-2.5 text-ink/60"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 3h12v18l-6-4-6 4z"/></svg>Guardados</button>
+  </div>
+</nav>
+
+<script>
+const PROV=['Todas','Niassa','Cabo Delgado','Nampula','Zambézia','Tete','Manica','Sofala','Inhambane','Gaza','Maputo'];
+const NEWS=[
+ ['Maputo','Cidade','Avenida 24 de Julho fecha ao trânsito para festival de rua','av24','há 1 h'],
+ ['Nampula','Economia','Caju: famílias de Mogovolas transformam o fruto em negócio','caju','há 2 h'],
+ ['Nampula','Turismo','Ilha de Moçambique prepara época com guias da comunidade','ilha','há 3 h'],
+ ['Sofala','Ambiente','Beira limpa valas de drenagem antes das primeiras chuvas','beira','há 3 h'],
+ ['Gaza','Agricultura','Cooperativa de tomate duplica produção com rega gota a gota','tomate','há 4 h'],
+ ['Maputo','Desporto','Hóquei em patins: os convocados e o que esperar do Mundial','hoquei','há 5 h'],
+ ['Zambézia','Agricultura','Mandioca mais resistente chega a novos distritos','mandioca','há 6 h'],
+ ['Manica','Economia','Camponeses vendem em conjunto e conseguem melhor preço','agricultores','há 7 h'],
+ ['Inhambane','Sociedade','Feira de gado junta criadoras de três distritos','cabras','há 8 h'],
+ ['Cabo Delgado','Cultura','Construtores de dhows ensinam o ofício a jovens aprendizes','dhow','há 9 h'],
+ ['Maputo','Cultura','Estação dos CFM acolhe noite de marrabenta','cfm','há 10 h'],
+ ['Maputo','Desporto','Futebol de praia: a escola de talentos da Costa do Sol','praiafut','ontem']
+];
+let cur='Todas';
+function pick(p){cur=p;render();}
+function render(){
+  rail.innerHTML=PROV.map(p=>`<button role="tab" aria-selected="${p==cur}" onclick="pick('${p}')" class="shrink-0 rounded-full px-4 py-2 ${p==cur?'bg-ink text-white':'bg-mist text-ink hover:bg-ink/10'}">${p=='Todas'?'Todo o país':p}</button>`).join('');
+  const list=NEWS.filter(n=>cur=='Todas'||n[0]==cur);
+  feedTitle.textContent=cur=='Todas'?'Todo o país':cur;
+  feedCount.textContent=list.length?`${list.length} ${list.length==1?'notícia':'notícias'}`:'';
+  feedEmpty.classList.toggle('hidden',list.length>0);
+  feed.innerHTML=list.map(n=>`<article class="flex gap-4 border-b border-mist pb-6 md:block md:border-0 md:pb-0">
+    <img data-mz="${n[3]}" data-w="600" class="h-24 w-28 shrink-0 rounded-xl object-cover md:aspect-[3/2] md:h-auto md:w-full">
+    <div class="md:mt-3"><p class="font-display text-xs font-medium text-sea">${n[0]} · ${n[1]}</p>
+    <h3 class="mt-1 font-display text-[17px] font-bold leading-snug md:text-xl">${n[2]}</h3>
+    <p class="mt-1.5 font-display text-xs text-ink/55">${n[4]} · <a href="#" class="font-medium text-chili underline-offset-2 hover:underline">Ler mais</a></p></div></article>`).join('');
+}
+render();
+photos.innerHTML=[['amanhecer','Amanhecer sobre a baía de Maputo','Leitora de Maputo'],['ilha2','Ruas da Ilha de Moçambique','Leitor de Nampula'],['praiafut2','Fim de tarde na praia','Leitora de Inhambane'],['catembe','Maputo vista da Katembe','Leitor da Katembe'],['camponesas','Dia de colheita','Leitora de Manica'],['porsol','Pôr do sol na Marginal','Leitor de Maputo']].map(p=>`<figure class="w-[78%] shrink-0 snap-start sm:w-[46%] lg:w-[31%]"><img data-mz="${p[0]}" data-w="800" class="aspect-[4/5] w-full rounded-2xl object-cover"><figcaption class="mt-2 font-display text-sm"><b>${p[1]}</b><br><span class="text-ink/60">Foto: ${p[2]}</span></figcaption></figure>`).join('');
+opinion.innerHTML=[['Isabel Tembe','Cidades para quem anda a pé','Maputo cresceu para os carros. Está na hora de devolver os passeios às pessoas.'],['Hélder Cossa','O caju merece fábricas, não só feiras','Exportar a castanha crua é deixar o valor fora do país.'],['Rosa Chilaule','A Ilha não é um museu','O património vive quando quem lá mora ganha com ele.']].map(o=>`<article class="rounded-2xl bg-white/5 p-5 hover:bg-white/10"><div class="flex items-center gap-3"><img data-av="${o[0]}" class="h-11 w-11 rounded-full ring-2 ring-saffron"><p class="font-display text-sm">${o[0]}</p></div><h3 class="mt-4 font-display text-xl font-bold leading-snug">${o[1]}</h3><p class="mt-2 text-white/75">${o[2]}</p><a href="#" class="mt-4 inline-block font-display text-sm font-medium text-saffron">Ler mais</a></article>`).join('');
+</script>
+</body>
+</html>

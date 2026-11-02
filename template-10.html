@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>O Digital</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#E30613',ink:'#111318'},fontFamily:{serif:['Merriweather','serif'],sans:['Roboto','sans-serif']}}}}</script>
+<script src="mz.js"></script>
+<style>
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.tick{animation:tick 40s linear infinite}
+@media (prefers-reduced-motion:reduce){.tick{animation:none}}
+.sec-title{position:relative;padding-bottom:10px;border-bottom:1px solid #e5e7eb}
+.sec-title::after{content:"";position:absolute;left:0;bottom:-2px;width:140px;height:4px;background:#E30613}
+</style>
+</head>
+<body class="bg-white font-sans text-ink antialiased">
+
+<!-- Barra superior -->
+<div class="border-b border-neutral-200 bg-neutral-50 text-[13px]">
+  <div class="mx-auto flex max-w-[1180px] items-center justify-between gap-4 px-4 py-2">
+    <span>Segunda-feira, 2 de Novembro de 2026</span>
+    <div class="flex items-center gap-5">
+      <span class="hidden items-center gap-2 sm:flex">⛅ <b>Maputo</b> 31°C</span>
+      <span class="flex gap-3 text-base" aria-label="Redes sociais"><a href="#" aria-label="Facebook">ⓕ</a><a href="#" aria-label="X">𝕏</a><a href="#" class="text-brand" aria-label="YouTube">▶</a><a href="#" aria-label="Instagram">◎</a><a href="#" class="text-sky-700" aria-label="LinkedIn">in</a></span>
+    </div>
+  </div>
+</div>
+
+<!-- Cabeçalho -->
+<header class="mx-auto max-w-[1180px] px-4">
+  <div class="flex items-center gap-6 py-5">
+    <a href="#" class="font-serif text-4xl font-black tracking-tight sm:text-5xl">O Digital<span class="text-brand">/</span></a>
+    <p class="hidden border-l border-neutral-300 pl-5 text-[15px] leading-snug text-neutral-700 md:block">Notícias em tempo real<br>com rigor e independência</p>
+    <label class="ml-auto hidden w-72 items-center rounded border border-neutral-300 px-3 py-2 text-sm md:flex"><input class="w-full outline-none" placeholder="Pesquisar no O Digital..."><svg class="h-5 w-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4-4"/></svg></label>
+    <button class="ml-auto md:ml-0" aria-label="Notificações" data-soon><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg></button>
+    <button data-menu-btn class="grid h-10 w-10 place-items-center rounded lg:hidden"><svg class="h-7 w-7" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+  <nav data-nav class="hidden items-stretch border-y border-neutral-200 text-[15px] font-bold lg:flex">
+    <a href="#" class="grid place-items-center bg-brand px-4 py-3 text-white" aria-label="Início">⌂</a>
+    <a href="#" class="px-4 py-3 hover:text-brand">Moçambique ▾</a><a href="#" class="px-4 py-3 hover:text-brand">Política</a><a href="#" class="px-4 py-3 hover:text-brand">Economia</a><a href="#" class="px-4 py-3 hover:text-brand">Sociedade</a><a href="#" class="px-4 py-3 hover:text-brand">Mundo</a><a href="#" class="px-4 py-3 hover:text-brand">Cultura</a><a href="#" class="px-4 py-3 hover:text-brand">Desporto</a><a href="#" class="px-4 py-3 hover:text-brand">Opinião</a><a href="#" class="px-4 py-3 hover:text-brand">Reportagens</a><a href="#" class="px-4 py-3 hover:text-brand">Multimédia ▾</a>
+  </nav>
+</header>
+
+<main class="mx-auto max-w-[1180px] px-4 pb-14">
+  <!-- Última hora -->
+  <div class="mt-4 flex items-center overflow-hidden rounded bg-neutral-100 text-[15px]">
+    <span class="shrink-0 bg-brand px-4 py-2 font-bold uppercase text-white [clip-path:polygon(0_0,100%_0,92%_100%,0_100%)] sm:pr-6">Última hora</span>
+    <div class="overflow-hidden"><p class="tick flex w-max gap-10 whitespace-nowrap px-4 font-medium"><span>Governo anuncia novo pacote de medidas para aliviar o custo de vida <span class="text-xs text-neutral-500">• há 12 minutos</span></span><span>INAM alerta para possível formação de ciclone no Canal de Moçambique <span class="text-xs text-neutral-500">• há 3 horas</span></span><span>Governo anuncia novo pacote de medidas para aliviar o custo de vida <span class="text-xs text-neutral-500">• há 12 minutos</span></span><span>INAM alerta para possível formação de ciclone no Canal de Moçambique <span class="text-xs text-neutral-500">• há 3 horas</span></span></p></div>
+  </div>
+
+  <!-- Destaque principal -->
+  <section class="mt-6 grid gap-6 lg:grid-cols-[1.75fr_1fr]">
+    <article class="relative overflow-hidden rounded-sm">
+      <img data-mz="aerea" data-w="1300" class="h-[420px] w-full object-cover sm:h-[460px]">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent"></div>
+      <div class="absolute bottom-0 p-5 text-white sm:p-6">
+        <span class="bg-brand px-2 py-1 text-sm font-bold uppercase">Moçambique</span>
+        <h1 class="mt-3 font-serif text-3xl font-black leading-tight sm:text-[40px]">Governo anuncia novo pacote de medidas para aliviar o custo de vida</h1>
+        <p class="mt-3 max-w-[60ch] text-[17px] text-white/90">O Executivo revelou hoje um conjunto de acções para conter a escalada dos preços e reforçar o poder de compra das famílias.</p>
+        <p class="mt-3 flex flex-wrap items-center gap-3 text-sm font-medium">◷ há 12 minutos <span class="text-white/50">|</span> Leitura: 3 min <a href="#" class="ml-2 rounded bg-white px-3 py-1 font-bold text-ink">Ler mais</a></p>
+      </div>
+    </article>
+    <div id="side" class="divide-y divide-neutral-200"></div>
+  </section>
+
+  <!-- Destaques + Newsletter -->
+  <section class="mt-8 grid gap-6 lg:grid-cols-[1fr_260px]">
+    <div>
+      <h2 class="sec-title font-serif text-2xl font-black">Destaques</h2>
+      <div id="dest" class="mt-5 grid grid-cols-2 gap-x-4 gap-y-6 md:grid-cols-4"></div>
+    </div>
+    <aside class="relative overflow-hidden rounded bg-ink p-6 text-white">
+      <img data-mz="cidade" data-w="500" class="absolute inset-0 h-full w-full object-cover opacity-15">
+      <div class="relative">
+        <p class="font-serif text-2xl font-black">O Digital<span class="text-brand">/</span></p>
+        <p class="mt-4 font-serif text-3xl font-black text-brand">Newsletter</p>
+        <svg class="mt-3 h-8 w-10 text-brand" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 6l9 7 9-7"/></svg>
+        <p class="mt-3 text-[15px]">Receba as principais notícias no seu e-mail.</p>
+        <form class="mt-4 space-y-2" onsubmit="event.preventDefault();this.querySelector('button').textContent='Subscrito ✓'"><input type="email" required class="w-full rounded px-3 py-2 text-sm text-ink" placeholder="O seu e-mail"><button class="w-full rounded bg-brand py-2.5 font-bold">Subscrever</button></form>
+      </div>
+    </aside>
+  </section>
+
+  <!-- Opinião / Grande Reportagem / Mais lidas -->
+  <section class="mt-10 grid gap-8 lg:grid-cols-[1fr_1.7fr_1fr]">
+    <div>
+      <h2 class="sec-title font-serif text-2xl font-black">Opinião</h2>
+      <div id="op" class="mt-4 divide-y divide-neutral-200"></div>
+    </div>
+    <div>
+      <h2 class="sec-title font-serif text-2xl font-black">Grande Reportagem</h2>
+      <article class="relative mt-4 overflow-hidden rounded-sm">
+        <img data-mz="camponesas" data-w="1000" class="h-[340px] w-full object-cover sm:h-[400px]">
+        <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent"></div>
+        <div class="absolute bottom-0 p-5 text-white">
+          <span class="bg-brand px-2 py-1 text-sm font-bold uppercase">Reportagem</span>
+          <h3 class="mt-3 font-serif text-3xl font-black leading-tight">A luta diária por água nas zonas rurais</h3>
+          <p class="mt-2 text-[15px] text-white/90">Em várias comunidades do país, o acesso à água potável continua a ser um desafio, com impacto directo na saúde, na educação e na economia local.</p>
+          <p class="mt-3 flex items-center gap-3 text-sm font-medium">◷ Leitura: 8 min <a href="#" class="rounded bg-white px-3 py-1 font-bold text-ink">Ler mais</a></p>
+        </div>
+      </article>
+    </div>
+    <div>
+      <h2 class="sec-title font-serif text-2xl font-black">Mais lidas</h2>
+      <ol id="maisLidas" class="mt-4 divide-y divide-neutral-200"></ol>
+    </div>
+  </section>
+</main>
+
+<footer class="bg-ink text-white">
+  <div class="mx-auto grid max-w-[1180px] gap-8 px-4 py-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div><p class="font-serif text-3xl font-black">O Digital<span class="text-brand">/</span></p><p class="mt-3 text-sm text-white/70">Notícias em tempo real com rigor e independência.</p></div>
+    <div><p class="font-bold">Secções</p><ul class="mt-3 grid grid-cols-2 gap-2 text-sm text-white/70"><li>Moçambique</li><li>Política</li><li>Economia</li><li>Sociedade</li><li>Cultura</li><li>Desporto</li></ul></div>
+    <div><p class="font-bold">O Digital</p><ul class="mt-3 space-y-2 text-sm text-white/70"><li>Sobre nós</li><li>Estatuto editorial</li><li>Publicidade</li><li>Contactos</li></ul></div>
+    <div><p class="font-bold">Siga-nos</p><p class="mt-3 flex gap-4 text-lg">ⓕ 𝕏 ▶ ◎ in</p></div>
+  </div>
+  <p class="border-t border-white/10 py-4 text-center text-xs text-white/50">© 2026 O Digital · Página de demonstração</p>
+</footer>
+
+<script>
+const clock='<svg class="inline h-4 w-4 -mt-0.5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>';
+side.innerHTML=[['Política','Parlamento debate hoje prioridades do Plano Económico e Social','praca','há 1 hora','4 min'],['Economia','Obras na EN1 avançam e prometem melhorar ligação Norte–Sul','av24','há 2 horas','3 min'],['Sociedade','INAM alerta para possível formação de novo ciclone no Canal de Moçambique','iss','há 3 horas','2 min']].map(s=>`<article class="flex gap-4 py-4 first:pt-0"><img data-mz="${s[2]}" data-w="400" class="h-24 w-32 shrink-0 rounded-sm object-cover sm:h-28 sm:w-44"><div><p class="text-xs font-bold uppercase text-brand">${s[0]}</p><h3 class="mt-1 text-[17px] font-bold leading-snug sm:text-lg">${s[1]}</h3><p class="mt-2 text-xs text-neutral-600">${clock} ${s[3]} &nbsp;|&nbsp; ${s[4]}</p></div></article>`).join('');
+dest.innerHTML=[['Economia','Exportações de pescado crescem 18% no último trimestre','dhow','há 4 horas'],['Sociedade','Novo calendário lectivo entra em vigor em Março','bairro','há 5 horas'],['Desporto','Moçambique prepara-se para o duelo decisivo de qualificação para o CAN','praiafut','há 6 horas'],['Cultura','Festival Maputo celebra a diversidade cultural moçambicana','vila','há 7 horas']].map(d=>`<article><img data-mz="${d[2]}" data-w="400" class="aspect-[16/10] w-full rounded-sm object-cover"><p class="mt-2 text-xs font-bold uppercase text-brand">${d[0]}</p><h3 class="mt-1 font-bold leading-snug">${d[1]}</h3><p class="mt-2 text-xs text-neutral-600">${clock} ${d[3]}</p></article>`).join('');
+op.innerHTML=[['Carlos Nhavoto','O custo de vida e os desafios do poder público','há 8 horas'],['Lúcia Mavie','Educação: o futuro que não pode esperar','há 10 horas'],['Rogério Chissico','Clima e desenvolvimento: uma agenda inevitável para Moçambique','há 12 horas']].map(o=>`<article class="flex gap-4 py-4 first:pt-0"><img data-av="${o[0]}" class="h-16 w-16 shrink-0 rounded-full"><div><p class="text-sm font-medium">${o[0]}</p><h3 class="mt-0.5 font-bold leading-snug">${o[1]}</h3><p class="mt-2 text-xs text-neutral-600">${clock} ${o[2]}</p></div></article>`).join('');
+maisLidas.innerHTML=[['Gasolina poderá baixar de preço nas próximas semanas','há 15 horas'],['Saiba como vai funcionar o novo subsídio social','há 18 horas'],['Moçambique entre os destinos turísticos em alta na região','há 20 horas'],['Greve na saúde afecta serviços em três províncias','há 22 horas'],['Quem é o novo treinador dos Mambas?','há 1 dia']].map((t,i)=>`<li class="py-3 first:pt-0"><article class="flex gap-3"><span class="grid h-9 w-9 shrink-0 place-items-center bg-brand text-lg font-bold text-white">${i+1}</span><div><h3 class="text-[15px] font-bold leading-snug">${t[0]}</h3><p class="mt-1 text-xs text-neutral-600">${clock} ${t[1]}</p></div></article></li>`).join('');
+</script>
+</body>
+</html>

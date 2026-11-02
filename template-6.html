@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>NewsPrk</title>
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#FFA300'},fontFamily:{sans:['Sora','sans-serif']}}}}</script>
+<script src="mz.js"></script>
+</head>
+<body class="bg-white font-sans text-neutral-900 antialiased">
+<div class="bg-black text-white"><div class="mx-auto flex max-w-6xl items-center justify-between px-4 py-2.5 text-[11px]"><span>Seg, 2 Nov 2026 · Maputo 31°</span><span class="flex gap-4">f 𝕏 in ▶ ◎</span><span>🇲🇿 PT ▾</span></div></div>
+<div class="mx-auto max-w-6xl px-4">
+<header class="flex items-center justify-between gap-4 py-6"><a href="#" class="flex items-center gap-2 text-2xl font-semibold"><span class="grid h-8 w-8 place-items-center rounded bg-black text-sm text-white">▤</span>News<span class="text-brand">Prk</span></a><label class="hidden w-56 items-center sm:flex justify-between rounded bg-neutral-100 px-4 py-2 text-xs text-neutral-400"><input class="w-full bg-transparent outline-none" placeholder="Pesquisar…">⌕</label><button data-menu-btn class="sm:hidden grid h-9 w-9 place-items-center rounded-md"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button></header>
+<nav data-nav class="flex gap-6 overflow-x-auto whitespace-nowrap pb-4 text-sm font-medium sm:gap-8"><a class="border-b-2 border-black">Início</a><a>Províncias ▾</a><a class="whitespace-nowrap">Sobre Nós</a><a>Notícias ▾</a><a>Categoria ▾</a><a>Blog</a><a>Contacto</a></nav>
+
+<section class="grid gap-4 lg:grid-cols-[2fr_1fr]">
+  <article class="relative h-[340px] overflow-hidden rounded-xl"><img data-mz="skyline" data-w="1100" class="h-full w-full object-cover"><div class="absolute inset-0 bg-black/45"></div><button class="absolute left-4 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full bg-white text-sm">‹</button><button class="absolute right-4 top-1/2 grid h-7 w-7 -translate-y-1/2 place-items-center rounded-full bg-white text-sm">›</button><div class="absolute bottom-6 left-6 right-6 text-white"><p class="text-sm opacity-80">há 2 horas</p><h1 class="mt-1 text-3xl font-semibold leading-tight sm:text-4xl">Maputo em Crescimento:<br>a Nova Linha do Horizonte</h1><p class="mt-4 flex items-center gap-3 text-sm"><img data-av="Pedro Sitoe" class="h-6 w-6 rounded-full">Pedro Sitoe <span class="opacity-70">💬 19</span> <a href="#" class="ml-2 rounded-full bg-brand px-3 py-1 text-xs text-black">Ler mais</a></p></div></article>
+  <div class="relative h-[340px] overflow-hidden rounded-xl"><img data-mz="cidade" data-w="600" class="h-full w-full object-cover"><div class="absolute inset-0 bg-black/55"></div><div class="absolute inset-x-6 top-10 text-center text-white"><p class="text-3xl font-semibold">Negócios</p><p class="mt-2 text-xs">O pulso da economia moçambicana, todos os dias</p><a href="#" class="mt-4 inline-block rounded-full bg-brand px-4 py-1.5 text-[10px] text-black">Saber mais</a><p class="mt-5 text-xs">ESPAÇO PUBLICITÁRIO</p></div></div>
+</section>
+
+<div class="mt-8 flex items-center gap-4"><span class="h-2 w-2 rounded-full bg-brand"></span><h2 class="text-2xl font-medium">Economia</h2><span class="h-px flex-1 bg-brand"></span><a class="rounded-full bg-brand px-4 py-1.5 text-[10px]">Ver tudo</a></div>
+<section class="mt-6 grid gap-8 lg:grid-cols-[1.6fr_1fr]">
+  <article><img data-mz="agricultores" data-w="900" class="aspect-[16/9] w-full rounded-xl object-cover"><p class="mt-4 text-xs"><span class="text-brand">Agricultura</span> | há 3 dias</p><h3 class="mt-2 text-2xl font-medium leading-snug">Associações de camponeses em Manica apostam na venda conjunta</h3><p class="mt-2 text-xs text-neutral-500">Ao juntar a produção de milho e feijão, os pequenos agricultores conseguem negociar melhores preços com os compradores… <a href="#" class="text-brand">Ler mais</a></p><p class="mt-4 flex items-center gap-2 text-sm"><img data-av="Dália Bila" class="h-7 w-7 rounded-full">Dália Bila</p></article>
+  <div><ul id="bizlist" class="divide-y"></ul><a class="mt-4 block rounded-full bg-brand py-2.5 text-center text-sm font-medium">Ver toda a Economia</a></div>
+</section>
+
+<section class="mt-10 grid gap-8 lg:grid-cols-2">
+  <div><div class="flex items-center gap-4"><h2 class="text-xl font-medium">Províncias</h2><span class="h-px flex-1 bg-neutral-200"></span><span class="text-neutral-400">←/→</span></div>
+    <article class="relative mt-5 h-44 overflow-hidden rounded-lg"><img data-mz="beira" data-w="800" class="h-full w-full object-cover"><div class="absolute inset-0 bg-black/50"></div><span class="absolute right-4 top-4 rounded bg-brand px-1.5 text-[9px]">Novo</span><div class="absolute bottom-4 left-4 right-4 text-white"><p class="text-[10px] opacity-75">Redação Beira &nbsp; Ontem 15:52</p><p class="mt-1 font-medium">Sofala: centro da Beira ganha novo mercado coberto</p></div></article>
+    <div id="world" class="mt-6 grid grid-cols-2 gap-4"></div></div>
+  <div><div class="flex items-center gap-4"><h2 class="text-xl font-medium">Tecnologia</h2><span class="h-px flex-1 bg-neutral-200"></span><span class="text-neutral-400">←/→</span></div>
+    <article class="relative mt-5 h-44 overflow-hidden rounded-lg"><img data-mz="iss" data-w="800" class="h-full w-full object-cover"><div class="absolute inset-0 bg-blue-950/50"></div><div class="absolute bottom-4 left-4 right-4 text-white"><p class="text-[10px] opacity-75">Redação &nbsp; Ontem 15:52</p><p class="mt-1 font-medium">Satélite mapeia crescimento urbano da Grande Maputo</p></div></article>
+    <ul id="tech" class="mt-6 space-y-4"></ul></div>
+</section>
+
+<div class="mt-10 flex items-center gap-4"><span class="h-2 w-2 rounded-full bg-brand"></span><h2 class="text-2xl font-medium">Turismo</h2><span class="h-px flex-1 bg-brand"></span><a class="rounded-full bg-brand px-4 py-1.5 text-[10px]">Ver tudo</a></div>
+<section class="mt-6 grid gap-6 lg:grid-cols-[2fr_1fr]">
+  <article class="relative min-h-[460px] overflow-hidden rounded-xl"><img data-mz="ilha" data-w="1100" class="absolute inset-0 h-full w-full object-cover"><div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-black/20"></div><p class="absolute left-6 top-6 text-xs text-white">Nampula | 9 dias</p><div class="absolute bottom-6 left-6 right-6 text-white"><h3 class="text-3xl font-medium leading-tight">Ilha de Moçambique:<br>Cinco Séculos de História</h3><p class="mt-3 max-w-lg text-xs opacity-80">Classificada como Património Mundial, a ilha recebe turistas de todo o mundo e quer agora apostar no turismo comunitário. <a href="#" class="underline">Ler mais</a></p><p class="mt-4 flex items-center gap-2 text-xs"><img data-av="Nísia Nhanala" class="h-5 w-5 rounded-full">Nísia Nhanala</p></div></article>
+  <div id="sec" class="space-y-5"></div>
+</section>
+
+<footer class="mt-14 rounded-t-[2rem] bg-black px-6 py-10 text-white sm:px-10">
+  <div class="flex flex-col gap-6 border-b border-white/20 pb-10 md:flex-row md:items-center md:justify-between"><h3 class="text-3xl font-light">Junta-te à nossa<br>newsletter</h3><form class="flex gap-3" onsubmit="event.preventDefault()"><input class="w-48 rounded-full bg-neutral-800 px-4 py-2.5 text-xs sm:w-64" placeholder="O teu email"><button class="rounded-full bg-brand px-6 text-xs text-black">Enviar</button></form></div>
+  <div class="grid gap-8 py-10 sm:grid-cols-2 lg:grid-cols-4">
+    <div><p class="flex items-center gap-2 text-2xl font-semibold">▤ News<span class="text-brand">Prk</span></p><p class="mt-4 text-xs text-white/70">Notícias de Moçambique, do Rovuma ao Maputo, contadas com rigor e proximidade.</p><p class="mt-6 text-sm font-semibold">Segue-nos</p><p class="mt-3 flex gap-4 text-sm">f 𝕏 in ▶ ◎</p></div>
+    <div><p class="text-xl">Categoria</p><ul class="mt-4 space-y-3 text-xs text-white/70"><li>Economia</li><li>Províncias</li><li>Turismo</li><li>Desporto</li></ul></div>
+    <div><p class="text-xl">Suporte</p><ul class="mt-4 space-y-3 text-xs text-white/70"><li>Centro de ajuda</li><li>FAQs</li><li>Suporte técnico</li><li>Contacta-nos</li></ul></div>
+    <div><p class="text-xl">Sobre Nós</p><ul class="mt-4 space-y-3 text-xs text-white/70"><li>A nossa história</li><li>Blogs</li><li>Notícias</li><li>Últimas</li></ul></div>
+  </div>
+  <p class="text-center text-xs text-white/70">Copyright © 2026 NewsPrk · Notícias fictícias para demonstração</p>
+</footer>
+</div>
+<script>
+bizlist.innerHTML=[['Caju','Exportação de caju processado cresce em Nampula','caju2'],['Agricultura','Gergelim: a nova aposta dos camponeses do Norte','gergelim'],['Transportes','Corredor de Maputo movimenta mais carga','cfm'],['Mercados','Feira de gado de Gaza atrai compradores','cabras'],['Avicultura','Microcrédito ajuda criadores de galinhas','galinhas']].map(b=>`<li class="py-3"><article class="flex gap-4"><img data-mz="${b[2]}" data-w="200" class="h-14 w-16 shrink-0 rounded object-cover"><div><p class="text-[10px]"><span class="text-brand">${b[0]}</span> | há 6 dias</p><p class="mt-1 text-sm font-medium leading-snug">${b[1]}</p></div></article></li>`).join('');
+world.innerHTML=[['Gaza: cooperativa de tomate duplica produção','tomate2'],['Inhambane: mulheres lideram feira agrícola','camponesas'],['Zambézia: campanha de mandioca melhorada','mandioca'],['Nampula: bebida de caju vira negócio familiar','caju']].map(w=>`<article><img data-mz="${w[1]}" data-w="400" class="aspect-[3/2] w-full rounded-lg object-cover"><p class="mt-2 text-[10px] text-neutral-500">Redação &nbsp; 1 Nov 2026</p><p class="mt-1 text-xs font-medium">${w[0]}</p></article>`).join('');
+tech.innerHTML=[['Startups','Hub de inovação em Maputo lança programa para jovens','vista'],['Mobile','Pagamentos por telemóvel chegam aos mercados rurais','bairro'],['Energia','Painéis solares levam luz a escolas da Katembe','katembe'],['Dados','Mapa digital mostra crescimento da Matola','aerea'],['Educação','Museu digitaliza coleção de história natural','museu']].map(t=>`<li><article class="flex gap-4"><img data-mz="${t[2]}" data-w="200" class="h-12 w-20 shrink-0 rounded object-cover"><div><p class="text-[10px] text-neutral-500">${t[0]} &nbsp; há 2 dias</p><p class="mt-0.5 text-sm font-medium">${t[1]}</p></div></article></li>`).join('');
+sec.innerHTML=[['Praias','Marginal de Maputo: o novo passeio à beira-mar','seaside'],['Ilhas','De dhow entre as ilhas do Norte','dhow'],['Cidade','Katembe vista da baía: roteiro de fim de semana','catembe']].map(s=>`<article><img data-mz="${s[2]}" data-w="500" class="aspect-[2/1] w-full rounded-lg object-cover"><p class="mt-2 text-[10px]"><span class="text-brand">${s[0]}</span> | há 15 dias</p><p class="mt-1 text-sm font-medium">${s[1]}</p></article>`).join('');
+</script>
+</body>
+</html>

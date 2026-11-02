@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SportLink Media</title>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#E5263C',blue:{600:'#1E4BEB'}},fontFamily:{sans:['Manrope','sans-serif']}}}}</script>
+<script src="mz.js"></script>
+</head>
+<body class="bg-[#EEF0F4] font-sans text-slate-900 antialiased">
+<div class="mx-auto max-w-6xl bg-white pb-24 sm:my-6 sm:rounded-3xl md:pb-8">
+
+<header class="flex items-center gap-6 px-5 py-5 sm:px-8">
+  <a href="#" class="flex items-center gap-2 text-xl font-extrabold"><span class="grid h-8 w-8 place-items-center rounded-lg bg-brand text-white">S</span>SportLink</a>
+  <nav class="hidden gap-2 text-sm font-medium md:flex"><a class="rounded-full bg-slate-100 px-4 py-2">Início</a><a class="rounded-full bg-slate-100 px-4 py-2">Serviços</a><a class="rounded-full bg-red-50 px-4 py-2 text-brand">Para clubes +</a></nav>
+  <div class="ml-auto hidden items-center gap-2 text-[11px] text-slate-500 md:flex">
+    <a class="flex flex-col items-center gap-1 px-3 py-1.5"><span class="relative">🔔<i class="absolute -right-0.5 top-0 h-2 w-2 rounded-full bg-brand"></i></span>Caixa</a>
+    <a class="flex flex-col items-center gap-1 px-3 py-1.5">🔖Favoritos</a>
+    <a class="flex flex-col items-center gap-1 rounded-xl bg-blue-50 px-3 py-1.5 text-blue-600"><span class="grid h-5 w-6 place-items-center rounded bg-blue-600 text-[9px] text-white">▶</span>Media</a>
+    <a class="flex flex-col items-center gap-1 px-3 py-1.5">👤Entrar</a>
+  </div>
+  <button class="ml-auto md:hidden" onclick="filters.classList.toggle('hidden')" aria-label="Filtros">☰</button>
+</header>
+
+<div class="flex flex-wrap items-end justify-between gap-4 border-b border-slate-100 px-5 sm:px-8">
+  <div><h1 class="text-2xl font-bold">Media</h1><div class="mt-2 flex gap-6 text-base"><a class="border-b-2 border-blue-600 pb-2 font-semibold text-blue-600">Publicações</a><a class="pb-2 text-slate-400">Canais</a></div></div>
+  <div class="mb-3 flex items-center gap-3"><label class="flex items-center rounded-xl border border-slate-200 px-3 py-2"><input class="w-48 text-sm outline-none" placeholder="Pesquisar publicações…"><span class="text-slate-400">⌕</span></label><span class="text-blue-600">▦</span><span class="text-slate-500">☰</span></div>
+</div>
+
+<main class="grid gap-6 px-5 pt-5 sm:px-8 md:grid-cols-[260px_1fr]">
+  <aside id="filters" class="hidden h-fit rounded-2xl bg-slate-50 p-4 md:block">
+    <div class="flex justify-between"><h2 class="text-lg font-bold">Filtros</h2><span>⚙</span></div>
+    <p class="mt-4 text-sm font-medium">Pesquisar publicações</p>
+    <input class="mt-2 w-full rounded-xl border border-slate-200 px-3 py-2 text-xs" placeholder="Palavras-chave…">
+    <p class="mt-4 text-sm font-medium">Ordenar</p>
+    <select class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs"><option>Mais recentes</option><option>Mais populares</option></select>
+    <p class="mt-4 text-sm font-medium">Modalidade</p>
+    <div id="sports" class="mt-2 flex flex-wrap gap-1.5"></div>
+    <p class="mt-4 text-sm font-medium">Tags</p>
+    <div id="tags" class="mt-2 grid grid-cols-2 gap-1.5"></div>
+    <p class="mt-4 text-sm font-medium">Período</p>
+    <div class="mt-2 flex items-center justify-between rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs">📅 24.10.2026 — 30.10.2026 <span>›</span></div>
+    <p class="mt-4 text-sm font-medium">Província</p>
+    <select class="mt-2 w-full rounded-xl border border-slate-200 bg-white px-3 py-2 text-xs"><option>Todas as províncias</option><option>Maputo</option><option>Gaza</option><option>Inhambane</option><option>Sofala</option><option>Manica</option><option>Tete</option><option>Zambézia</option><option>Nampula</option><option>Niassa</option><option>Cabo Delgado</option></select>
+    <button class="mt-5 w-full rounded-full border border-slate-200 bg-white py-2.5 text-sm">↺ Limpar filtros</button>
+    <button class="mt-2 w-full rounded-full bg-blue-600 py-3 text-sm font-semibold text-white">Aplicar filtros</button>
+  </aside>
+  <section>
+    <p class="font-semibold">Publicações encontradas: 4</p>
+    <div id="posts" class="mt-3 grid gap-4 sm:grid-cols-2"></div>
+  </section>
+</main>
+
+<nav class="fixed bottom-0 left-0 right-0 flex justify-around border-t bg-white py-2 text-[11px] text-slate-500 md:hidden"><a class="flex flex-col items-center">🏠Início</a><a class="flex flex-col items-center">🔖Serviços</a><a class="flex flex-col items-center rounded-xl bg-blue-50 px-3 text-blue-600">▶Media</a><a class="flex flex-col items-center">👤Entrar</a></nav>
+</div>
+
+<script>
+const chip=(t,on)=>`<button class="rounded-full border px-2.5 py-1 text-xs ${on?'border-blue-600 bg-blue-50 text-blue-600':'border-slate-200 bg-white'}" onclick="this.classList.toggle('border-blue-600');this.classList.toggle('bg-blue-50');this.classList.toggle('text-blue-600')">${t}</button>`;
+sports.innerHTML=['🛼 Hóquei em patins','⚽ Futebol','🏖 Futebol de praia','🏀 Basquetebol','🏃 Atletismo','🥊 Boxe','🏊 Natação','🏐 Voleibol','Outros'].map((t,i)=>chip(t,i==0)).join('');
+tags.innerHTML=['# Notícias','# Moçambola','# Mambas','# Entrevistas','# Estatística','# Reportagens'].map((t,i)=>chip(t,i==0)).join('');
+posts.innerHTML=[
+ ['Artur Mabunda','Jornalista desportivo','Hóquei em patins','hoquei','30.10.2026','Seleção de hóquei em patins: jovens líderes e grandes ambições','Analisamos a convocatória, os reforços vindos da Europa e as hipóteses no próximo Mundial.',128,24,'1.2K'],
+ ['Marta Langa','Comentadora de futebol','Futebol de praia','praiafut','29.10.2026','Costa do Sol campeã! Vitória histórica no torneio nacional de praia','A equipa da capital venceu pela primeira vez. Reportagem a partir das areias da Marginal.',342,56,'6.1K'],
+ ['Ilídio Sitoe','Analista, blogger','Futebol','praiafut2','28.10.2026','Moçambola: clubes reforçam plantéis para a segunda volta','Três equipas lutam pelo título. O que muda com as novas contratações?',89,17,'980'],
+ ['Sofia Muianga','Especialista em modalidades','Atletismo','marginal','27.10.2026','Corrida da Marginal bate recorde de participantes','Mais de 5 mil corredores juntaram-se na avenida para a prova de 10 km.',256,48,'4.3K']
+].map((p,i)=>`<article class="rounded-2xl bg-slate-50 p-3">
+<div class="flex items-center gap-3"><img data-av="${p[0]}" class="h-10 w-10 rounded-full"><div class="flex-1"><p class="text-sm font-semibold">${p[0]}</p><p class="text-xs text-slate-500">${p[1]}</p></div><span class="text-slate-400">⋮</span></div>
+<div class="relative mt-3"><img data-mz="${p[3]}" data-w="700" class="aspect-[2/1] w-full rounded-xl object-cover"><span class="absolute bottom-2 left-2 rounded-md bg-black/60 px-2 py-1 text-xs text-white">${p[2]}</span></div>
+<p class="mt-3 text-xs text-slate-500">${p[4]}</p><h3 class="mt-1 font-bold leading-snug">${p[5]}</h3><p class="mt-1 text-sm text-slate-500">${p[6]} <a href="#" class="font-medium text-blue-600">Ler mais</a></p>
+<div class="mt-3 flex items-center gap-5 text-sm text-slate-500"><span class="${i%2?'text-blue-600':''}">♡ ${p[7]}</span><span>💬 ${p[8]}</span><span>👁 ${p[9]}</span><span class="ml-auto">⤴</span></div></article>`).join('');
+</script>
+</body>
+</html>

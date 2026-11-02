@@ -1,0 +1,150 @@
+<!doctype html>
+<html lang="pt">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Buletin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Source+Serif+4:wght@500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com/3.4.16"></script>
+<script>tailwind.config={theme:{extend:{colors:{brand:'#E3262B'},fontFamily:{sans:['Inter','sans-serif'],serif:['"Source Serif 4"','serif']}}}}</script>
+<script src="mz.js"></script>
+<style>.clamp2{display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}.clamp3{display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}</style>
+</head>
+<body class="bg-white font-sans text-neutral-900 antialiased">
+<div class="mx-auto max-w-6xl px-4 sm:px-6">
+
+<header class="flex items-center justify-between py-6">
+  <div class="flex items-center gap-5">
+    <a href="#" class="font-serif text-2xl font-bold text-brand">Buletin</a>
+    <span class="hidden h-5 w-px bg-neutral-300 sm:block"></span>
+    <nav data-nav class="hidden gap-8 text-sm font-medium text-neutral-700 sm:flex"><a href="#" class="hover:text-brand">Histórias</a><a href="#" class="hover:text-brand">Criadores</a><a href="#" class="hover:text-brand">Comunidade</a><a href="#" class="hover:text-brand">Subscrever</a></nav>
+  </div>
+  <div class="flex items-center gap-5 text-sm">
+    <a href="#" class="hidden items-center gap-1.5 text-neutral-700 sm:flex"><svg class="h-4 w-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg>Escrever</a>
+    <svg class="h-5 w-5 text-neutral-700" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M18 8a6 6 0 10-12 0c0 7-3 9-3 9h18s-3-2-3-9M13.7 21a2 2 0 01-3.4 0"/></svg>
+    <img data-av="Aida Nhantumbo" class="h-8 w-8 rounded-full">
+    <button data-menu-btn class="sm:hidden -mr-2 grid h-9 w-9 place-items-center rounded-md"><svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></svg></button>
+  </div>
+</header>
+
+<section class="rounded-xl bg-neutral-50 px-6 py-8 text-center">
+  <p class="text-[11px] font-medium uppercase tracking-[.3em] text-neutral-500">Bem-vindo ao Buletin</p>
+  <h1 class="mt-3 text-xl font-medium leading-snug sm:text-2xl">Histórias de Moçambique ✍️ que despertam <span class="text-brand">inspiração</span> 💡,<br class="hidden sm:block"> <span class="text-brand">conhecimento</span> 📕 e <span class="text-brand">orgulho</span> 🇲🇿</h1>
+</section>
+
+<section class="mt-10 grid items-center gap-8 md:grid-cols-2">
+  <img data-mz="ponte" data-w="1000" class="aspect-[16/10] w-full rounded-lg object-cover">
+  <article>
+    <div class="flex items-center gap-2 text-sm text-neutral-500"><span class="grid h-5 w-5 place-items-center rounded-full bg-brand text-[10px] font-bold text-white">V</span>Voz do Limpopo · <span>12 minutos atrás</span></div>
+    <h2 class="mt-4 font-serif text-3xl font-semibold leading-tight sm:text-4xl">Ponte Maputo–Katembe: como a travessia mudou a vida na margem sul</h2>
+    <p class="mt-4 text-sm leading-relaxed text-neutral-500">Comerciantes, estudantes e pescadores contam como a ligação rodoviária encurtou distâncias, fez nascer novos bairros e trouxe investimento à Katembe e à estrada para a Ponta do Ouro…</p>
+    <p class="mt-4 text-sm"><span class="text-brand">Sociedade</span> <span class="text-neutral-400">• 4 min de leitura</span> · <a href="#" class="font-medium text-brand">Ler mais →</a></p>
+  </article>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Últimas Notícias</h3><a href="#" class="text-sm text-brand">Ver tudo →</a></div>
+  <div id="latest" class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Buletin Stories</h3><a href="#" class="text-sm text-brand">Ver tudo →</a></div>
+  <div id="stories" class="mt-6 flex gap-5 overflow-x-auto pb-2"></div>
+</section>
+
+<section class="mt-14">
+  <div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Leitura Obrigatória</h3><a href="#" class="text-sm text-brand">Ver tudo →</a></div>
+  <div class="mt-6 grid gap-6 lg:grid-cols-[1fr_2fr_1fr]">
+    <article>
+      <img data-mz="caju" data-w="600" class="aspect-[5/4] w-full rounded-md object-cover">
+      <p class="mt-3 flex items-center gap-1.5 text-xs text-neutral-500"><span class="h-3.5 w-3.5 rounded-full bg-brand"></span>Eco do Niassa · 10 horas atrás</p>
+      <h4 class="mt-2 font-serif text-lg font-semibold leading-snug">Campanha do caju arranca em Nampula com preços em alta</h4>
+      <p class="clamp3 mt-2 text-xs text-neutral-500">Em Mogovolas, as famílias aproveitam também o fruto para produzir bebida tradicional. Os produtores pedem mais fábricas de processamento…</p>
+      <p class="mt-3 text-xs"><span class="text-brand">Economia</span> <span class="text-neutral-400">• 8 min</span> · <a href="#" class="text-brand">Ler mais</a></p>
+    </article>
+    <article class="relative overflow-hidden rounded-lg">
+      <img data-mz="ilha" data-w="1100" class="h-full min-h-[380px] w-full object-cover">
+      <div class="absolute inset-0 bg-gradient-to-t from-black/85 via-black/20 to-transparent"></div>
+      <div class="absolute bottom-0 p-6 text-white">
+        <p class="text-xs text-white/80">● Gazeta do Zambeze · 5 horas atrás</p>
+        <h4 class="mt-2 font-serif text-2xl font-semibold leading-snug">Ilha de Moçambique: o património mundial que quer receber mais visitantes</h4>
+        <p class="clamp2 mt-2 text-xs text-white/75">Entre a Fortaleza de São Sebastião e as ruas de pedra e cal, a ilha prepara uma nova época turística com guias locais…</p>
+        <p class="mt-3 text-xs text-white/80">Turismo • 10 min · <a href="#" class="underline">Ler mais</a></p>
+      </div>
+    </article>
+    <div class="space-y-6">
+      <article><img data-mz="estacao" data-w="600" class="aspect-[2/1] w-full rounded-md object-cover"><p class="mt-2 text-xs text-neutral-500">Jornal Marrabenta · 20 horas atrás</p><h4 class="mt-1 font-serif font-semibold">Estação Central de Maputo recebe exposição de fotografia</h4><p class="mt-1 text-xs"><span class="text-brand">Cultura</span> <span class="text-neutral-400">• 4 min</span></p></article>
+      <article><img data-mz="praiafut" data-w="600" class="aspect-[2/1] w-full rounded-md object-cover"><p class="mt-2 text-xs text-neutral-500">Golo Moz · 22 horas atrás</p><h4 class="mt-1 font-serif font-semibold">Torneio de futebol de praia junta 40 equipas na Costa do Sol</h4><p class="mt-1 text-xs"><span class="text-brand">Desporto</span> <span class="text-neutral-400">• 6 min</span></p></article>
+    </div>
+  </div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Escolha do Editor</h3><a href="#" class="text-sm text-brand">Ver tudo →</a></div>
+  <article class="relative mt-6 overflow-hidden rounded-lg">
+    <img data-mz="porsol" data-w="1600" class="h-[340px] w-full object-cover sm:h-[420px]">
+    <div class="absolute inset-0 bg-gradient-to-t from-black/80 to-transparent"></div>
+    <div class="absolute bottom-0 max-w-3xl p-6 text-white">
+      <p class="text-xs text-white/80">● Jornal Marrabenta · 5 horas atrás</p>
+      <h4 class="mt-2 font-serif text-2xl font-semibold sm:text-3xl">Maputo ao pôr do sol: a cidade que se reinventa na baía</h4>
+      <p class="mt-2 text-xs text-white/75">Da Baixa à Marginal, novos cafés, galerias e mercados de rua estão a mudar a forma como os maputenses vivem a cidade ao fim do dia.</p>
+      <p class="mt-3 text-xs text-white/80">Cidade • 10 min · <a href="#" class="underline">Ler mais</a></p>
+    </div>
+  </article>
+  <div id="editor" class="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-4"></div>
+</section>
+
+<section class="mt-16 grid gap-6 lg:grid-cols-2">
+  <div><div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Negócios</h3><span class="text-brand">→</span></div><div id="biz" class="mt-6 grid gap-6 sm:grid-cols-2"></div></div>
+  <div><div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Desporto</h3><span class="text-brand">→</span></div><div id="sport" class="mt-6 grid gap-6 sm:grid-cols-2"></div></div>
+</section>
+
+<section class="mt-16">
+  <div class="flex items-center justify-between"><h3 class="text-2xl font-semibold">Top Criadores</h3><a href="#" class="text-sm text-brand">Ver tudo →</a></div>
+  <div id="creators" class="mt-6 grid grid-cols-2 gap-6 lg:grid-cols-4"></div>
+</section>
+
+<section class="mt-16 flex flex-col gap-6 rounded-xl bg-neutral-50 px-6 py-10 sm:px-10 md:flex-row md:items-center md:justify-between">
+  <div><p class="text-[11px] uppercase tracking-[.3em] text-neutral-500">Recebe primeiro</p><h3 class="mt-2 text-xl font-medium">As notícias de Moçambique em primeira mão,<br><span class="text-brand">subscreve</span> ✍️ as nossas atualizações</h3></div>
+  <form class="flex w-full max-w-md gap-2" onsubmit="event.preventDefault()"><input type="email" placeholder="O teu email" class="min-w-0 flex-1 rounded-md border border-neutral-200 bg-white px-3 py-2 text-sm outline-none focus:border-brand"><button class="rounded-md bg-brand px-4 py-2 text-sm font-medium text-white">Subscrever</button></form>
+</section>
+
+<footer class="mt-16 grid gap-10 pb-10 lg:grid-cols-[1.2fr_3fr]">
+  <div>
+    <a class="font-serif text-2xl font-bold text-brand">Buletin</a>
+    <p class="mt-3 max-w-xs text-xs text-neutral-500">Histórias de Moçambique que despertam inspiração, conhecimento e orgulho.</p>
+    <div class="mt-5 flex gap-3"><span class="h-7 w-7 rounded-full bg-brand"></span><span class="h-7 w-7 rounded-full bg-brand"></span><span class="h-7 w-7 rounded-full bg-brand"></span><span class="h-7 w-7 rounded-full bg-brand"></span></div>
+    <p class="mt-16 text-xs text-neutral-500">Copyright © 2026 Buletin. Notícias fictícias para demonstração.</p>
+  </div>
+  <div id="footcols" class="grid grid-cols-2 gap-8 sm:grid-cols-4"></div>
+</footer>
+</div>
+
+<script>
+const SRC=['Voz do Limpopo','Gazeta do Zambeze','Golo Moz','Eco do Niassa'];
+const card=(d,i)=>`<article><img data-mz="${d[2]}" data-w="600" class="aspect-[5/4] w-full rounded-md object-cover">
+<p class="mt-3 flex items-center gap-1.5 text-xs text-neutral-500"><span class="h-3.5 w-3.5 rounded-full bg-brand"></span>${SRC[i%4]} · ${i*3+2} horas atrás</p>
+<h4 class="clamp3 mt-2 font-serif text-lg font-semibold leading-snug">${d[0]}</h4>
+<p class="clamp3 mt-2 text-xs leading-relaxed text-neutral-500">${d[3]||'Um resumo curto da notícia que dá contexto ao leitor e o convida a continuar a ler o artigo completo…'}</p>
+<p class="mt-3 text-xs"><span class="text-brand">${d[1]}</span> <span class="text-neutral-400">• ${i+6} min</span> · <a href="#" class="text-brand">Ler mais</a></p></article>`;
+latest.innerHTML=[
+ ['Hóquei em patins: seleção nacional prepara regresso ao Mundial','Desporto','hoquei','A seleção de hóquei em patins treina em Maputo com uma mistura de veteranos e jovens talentos.'],
+ ['Novos comboios de passageiros reforçam a linha Maputo–Marracuene','Transportes','cfm','Os utentes da área metropolitana ganham mais horários nas horas de ponta.'],
+ ['Avenida 24 de Julho recebe nova iluminação e passeios','Cidade','av24','As obras de requalificação deverão terminar antes da época festiva.'],
+ ['Beira aposta em drenagem para enfrentar a próxima época chuvosa','Ambiente','beira','O município reforça valas e diques na zona baixa da cidade.']
+].map(card).join('');
+editor.innerHTML=[
+ ['Katembe: o bairro que cresce do outro lado da baía','Cidade','katembe'],
+ ['Mulheres agricultoras lideram cooperativa de tomate em Gaza','Agricultura','tomate'],
+ ['Museu de História Natural reabre ala de biodiversidade','Cultura','museu'],
+ ['Barcos à vela tradicionais continuam a ligar ilhas do Norte','Turismo','dhow']
+].map(card).join('');
+biz.innerHTML=[['Produtores de gergelim procuram novos mercados na Ásia','Negócios','gergelim'],['Pequenos aviários ganham crédito para expandir em Inhambane','Negócios','galinhas']].map(card).join('');
+sport.innerHTML=[['Futebol de praia: jovens da Costa do Sol sonham com a seleção','Desporto','praiafut2'],['Moçambola entra na reta final com três candidatos ao título','Desporto','praiafut']].map(card).join('');
+stories.innerHTML=[['maputo','maputo'],['ponte','ponte2'],['ilha','ilha2'],['beira','beira'],['caju','caju2'],['desporto','hoquei'],['katembe','catembe'],['marginal','marginal'],['cultura','vila'],['campo','mandioca'],['baixa','baixa'],['comboios','estacao']].map(([n,k])=>`<div class="flex shrink-0 cursor-pointer flex-col items-center gap-2" data-soon><span class="rounded-full border-2 border-brand p-0.5"><img data-mz="${k}" data-w="160" class="h-14 w-14 rounded-full object-cover"></span><span class="text-[11px] text-neutral-600">${n}</span></div>`).join('');
+creators.innerHTML=[['Celso Macuácua','Voz do Limpopo'],['Isabel Tembe','Gazeta do Zambeze'],['Hélder Cossa','Golo Moz'],['Rosa Chilaule','Eco do Niassa']].map(c=>`<div class="flex items-center gap-3"><img data-av="${c[0]}" class="h-12 w-12 rounded-full"><div><p class="font-serif text-lg font-semibold">${c[0]}</p><p class="text-xs text-brand">${c[1]}</p></div></div>`).join('');
+const F={'Negócios':['Startups','Emprego','Caju','Mercados','Banca'],'Tecnologia':['Inovação','Gadgets','Cidades','Startups','Mobile'],'Viagem':['Ilha de Moçambique','Tofo','Bazaruto','Gorongosa','Niassa'],'Desporto':['Moçambola','Mambas','Hóquei','Basquetebol','Atletismo'],'Cultura':['Marrabenta','Timbila','Literatura','Cinema','Moda'],'Províncias':['Maputo','Gaza','Sofala','Nampula','Cabo Delgado'],'Clima':['Previsão','Ciclones','Cheias','Seca','Alertas'],'Mais':['Sobre','Publicidade','Carreiras','Contactos','Apoio']};
+footcols.innerHTML=Object.entries(F).map(([h,l])=>`<div><p class="text-sm font-semibold">${h}</p><ul class="mt-3 space-y-2 text-xs text-neutral-500">${l.map(x=>`<li><a href="#" class="hover:text-brand">${x}</a></li>`).join('')}</ul></div>`).join('');
+</script>
+</body>
+</html>
